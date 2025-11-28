@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "Nodenext",
+    "moduleResolution": "Nodenext",        // 关键：支持 ESM 第三方包
+    "declaration": true,                   // 生成 .d.ts 类型文件
+    "declarationMap": true,                // 生成 .d.ts.map，调试友好
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true,  // 允许默认导入
+    "esModuleInterop": true,               // 兼容 CommonJS
+    "resolveJsonModule": true,             // 支持导入 JSON 文件
+    "skipLibCheck": false,                 // 不跳过类型检查，推荐打开
+    "forceConsistentCasingInFileNames": true,
+    "strict": true                         // 可选，打开严格模式
+  },
+  "include": ["src"]
+}

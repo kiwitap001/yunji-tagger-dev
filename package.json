@@ -1,0 +1,50 @@
+{
+  "name": "yunji-tagger-dev",
+  "version": "0.0.1",
+  "description": "The plugin for tagging components in Vite Dev",
+  "type": "module",
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiwitap001/yunji-tagger-dev"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "plugin",
+    "tagger"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts --outDir dist"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.1.4",
+    "magic-string": "^0.30.17"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/plugin-syntax-jsx": "^7.27.1",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@vue/compiler-dom": "^3.5.16"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.27.6",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^24.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}
