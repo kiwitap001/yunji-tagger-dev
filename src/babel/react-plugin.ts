@@ -20,7 +20,7 @@ const ReactBabelPlugin = (babel: { types: typeof t }) => {
   const { types: t } = babel;
 
   return {
-    name: 'babel-react-yunji-tagger',
+    name: 'babel-react-yunji-tagger-dev',
     visitor: {
       JSXAttribute(path: NodePath<JSXAttribute>) {
         // console.log(`${new Date().toISOString()} path = `, JSON.stringify(path.node));

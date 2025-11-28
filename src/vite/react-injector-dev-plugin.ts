@@ -2,6 +2,7 @@ import fs from "fs";
 import { transformSync } from "@babel/core";
 import { createFilter } from '@rollup/pluginutils';
 import TagInjector from '../core/injectorReact.js';
+// @ts-ignore
 import syntaxJsx from "@babel/plugin-syntax-jsx"; // ← 需要这行
 import checkPeerDeps from '../core/checkPeerDeps.js';
 import ReactBabelPlugin from "../babel/react-plugin.js";

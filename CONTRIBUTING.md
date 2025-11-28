@@ -1,13 +1,13 @@
-# Contributing to yunji-tagger-taro
+# Contributing to yunji-tagger-dev
 
 ## Table of Contents
 
-- [Contributing to yunji-tagger-taro](#contributing-to-yunji-tagger-taro)
+- [Contributing to yunji-tagger-dev](#contributing-to-yunji-tagger-dev)
   - [Table of Contents](#table-of-contents)
   - [Documentation](#documentation)
   - [Installation](#installation)
   - [Usage](#usage)
-    - [Taro + React](#taro--react)
+    - [Vite + React](#vite--react)
   - [Configure](#configure)
       - [Options](#options)
 
@@ -18,21 +18,21 @@
 ## Installation
 
 ```bash
-npm install --save-dev yunji-tagger-taro
+npm install --save-dev yunji-tagger-dev
 ```
 
 ```bash
-yarn add  -dev yunji-tagger-taro
+yarn add  -dev yunji-tagger-dev
 ```
 
 
 ## Usage
 
-### Taro + React
+### Vite + React
 
 ```ts
 
-const { createBabelPluginTaro } = require('yunji-tagger');
+const { createReactDevInjectorPlugin } = require('yunji-tagger');
 
 module.exports = {
   presets: [
@@ -49,7 +49,7 @@ module.exports = {
 
 ## Configure
 
-Read the [Contributing guide](https://github.com/kiwitap001/yunji-tagger/blob/yunji-tagger-taro/CONTRIBUTING.md)
+Read the [Contributing guide](https://github.com/kiwitap001/yunji-tagger-dev/blob/main/CONTRIBUTING.md)
 
 ####  Options
 
