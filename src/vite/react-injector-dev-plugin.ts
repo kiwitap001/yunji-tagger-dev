@@ -12,7 +12,7 @@ import { type DefaultPluginOptionsType } from '../core/constants.js';
 export default function createReactDevInjectorPlugin(options: DefaultPluginOptionsType = {}) {
 
   // 检查必需的 peerDependencies 是否存在
-  checkPeerDeps(['@babel/plugin-syntax-jsx', '@babel/preset-typescript', '@babel/preset-react', '@babel/core'], 'yunji-tagger');
+  checkPeerDeps(['@babel/plugin-syntax-jsx', '@babel/preset-typescript', '@babel/preset-react', '@babel/core'], 'yunji-tagger-dev');
   
   const filter = createFilter(options.include || /\.(jsx|tsx)$/, options.exclude || /node_modules/);
 

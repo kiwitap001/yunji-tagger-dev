@@ -35,15 +35,7 @@ yarn add  -dev yunji-tagger-dev
 const { createReactDevInjectorPlugin } = require('yunji-tagger');
 
 module.exports = {
-  presets: [
-    ['taro', {
-      framework: 'react',
-      ts: true,
-      compiler: 'webpack5',
-      useBuiltIns: process.env.TARO_ENV === 'h5' ? 'usage' : false
-    }]
-  ],
-  "plugins": [createBabelPluginTaro({})], // success
+  "plugins": [createReactDevInjectorPlugin({})], // success
 }
 ```
 
@@ -57,7 +49,7 @@ Read the [Contributing guide](https://github.com/kiwitap001/yunji-tagger-dev/blo
 
 `exclude` (tring | regexp | Array[...string|regexp], default `[/node_modules/]`) - name of the file with diagram to generate
 
-`attributes` (object, default `{uniqueId:'data-plugin-component-unique-id',filePath:'data-plugin-component-file-path',fileName:'data-plugin-component-file-name',lineNumber:'data-plugin-line-number',columnNumber:'data-plugin-column-number',tagName:'data-plugin-tag-name',tagContent:'data-plugin-tag-content', elementMap: 'data-plugin-element-map',contextInfo:'data-plugin-component-context', hasElementChildren: 'data-plugin-has-element-children' }`) - name of the file with diagram to generate
+`attributes` (object, default `{uniqueId:'data-plugin-component-unique-id',filePath:'data-plugin-component-file-path',fileName:'data-plugin-component-file-name',lineNumber:'data-plugin-line-number',columnNumber:'data-plugin-column-number',tagName:'data-plugin-tag-name',tagContent:'data-plugin-tag-content', elementMap: 'data-plugin-element-map',contextInfo:'data-plugin-component-context', hasElementChildren: 'data-plugin-has-element-children', 'data-plugin-is-svg': true }`) - name of the file with diagram to generate
 
 `includeTags` (array, default `[]`) - HTML tags that need to be included
 

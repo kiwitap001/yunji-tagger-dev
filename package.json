@@ -1,6 +1,6 @@
 {
   "name": "yunji-tagger-dev",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The plugin for tagging components in Vite Dev",
   "type": "module",
   "author": "",
@@ -20,7 +20,8 @@
   "types": "./dist/index.d.ts",
   "keywords": [
     "plugin",
-    "tagger"
+    "tagger",
+    "vite"
   ],
   "files": [
     "dist"
