@@ -12,8 +12,8 @@ import type {
 import {
   DEFAULT_PLUGIN_OPTIONS,
   type DefaultPluginOptionsType,
-  SVG_COMPONENT_MODULES,
-  CHART_COMPONENT_MODULES,
+  SVG_COMPONENT_MODULES_REACT,
+  CHART_COMPONENT_MODULES_REACT,
 } from "./constants.js";
 
 class TagInjector {
@@ -387,7 +387,7 @@ class TagInjector {
     const importDecl: any = bpath.parent;
     const source = importDecl?.source?.value || "";
     if (typeof source !== "string") return false;
-    if (SVG_COMPONENT_MODULES.includes(source)) return true;
+    if (SVG_COMPONENT_MODULES_REACT.includes(source)) return true;
     if (source.startsWith("react-icons")) return true;
     return false;
   }
@@ -412,7 +412,7 @@ class TagInjector {
     const importDecl: any = bpath.parent;
     const source = importDecl?.source?.value || "";
     if (typeof source !== "string") return false;
-    if (CHART_COMPONENT_MODULES.includes(source)) return true;
+    if (CHART_COMPONENT_MODULES_REACT.includes(source)) return true;
     return false;
   }
 
