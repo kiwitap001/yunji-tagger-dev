@@ -1,7 +1,10 @@
 # Change Log
 
-## 0.0.2 / 2025-12-25
-- Add: 添加默写svg图标库解析 `'data-plugin-is-svg'='true'` 添加svg图标解析
+## 0.0.4 / 2026-01-05
+- Add: 杩囨护鍥捐〃缁勪欢 `'data-plugin-is-chart'='true'` 
+
+## 0.0.3 / 2025-12-25
+- Add: svg缁勪欢鎴杝vg鍥炬爣缁勪欢 `'data-plugin-is-svg'='true'` 
 
 ## v0.0.1 / 2025-10-20
 ### Added

@@ -27,6 +27,7 @@ const DEFAULT_ATTRIBUTES: DefaultAttributes = {
   contextInfo: 'data-plugin-component-context',
   hasElementChildren: 'data-plugin-has-element-children',
   isSVG: 'data-plugin-is-svg',
+  isChart: 'data-plugin-is-chart',
   svgWidth: 'data-plugin-svg-width',
   svgHeight: 'data-plugin-svg-height',
   svgContent: 'data-plugin-svg-content',
@@ -116,6 +117,7 @@ const LOG_LEVELS: Record<string, string> = {
 };
 
 const SVG_COMPONENT_MODULES: string[] = ['lucide-react', '@ant-design/icons'];
+const CHART_COMPONENT_MODULES: string[] = ['recharts', 'echarts', 'echarts-for-react', 'vue-echarts'];
 
 export type DefaultPluginOptionsType = {
   enabled?: boolean;
@@ -207,4 +209,5 @@ export {
   RESERVED_ATTRIBUTES,
   SOURCE_MAP_OPTIONS,
   SVG_COMPONENT_MODULES,
+  CHART_COMPONENT_MODULES,
 };

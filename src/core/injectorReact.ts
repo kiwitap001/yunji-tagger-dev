@@ -13,6 +13,7 @@ import {
   DEFAULT_PLUGIN_OPTIONS,
   type DefaultPluginOptionsType,
   SVG_COMPONENT_MODULES,
+  CHART_COMPONENT_MODULES,
 } from "./constants.js";
 
 class TagInjector {
@@ -131,6 +132,13 @@ class TagInjector {
         const sourceCode = state.file.code.slice(node.start, node.end);
         safeAddAttr(attributes.svgContent, encodeURIComponent(sourceCode));
       }
+    }
+
+    const isChartComponent = state?.path
+      ? this.isChartComponent(openingEl, state.path)
+      : false;
+    if (isChartComponent) {
+      safeAddAttr(attributes?.isChart || "data-plugin-is-chart", "true");
     }
 
     // 提取标签文本内容，仅在 JSXElement 中执行
@@ -381,6 +389,30 @@ class TagInjector {
     if (typeof source !== "string") return false;
     if (SVG_COMPONENT_MODULES.includes(source)) return true;
     if (source.startsWith("react-icons")) return true;
+    return false;
+  }
+
+  isChartComponent(openingEl: any, path: any): boolean {
+    const nameNode: any = openingEl?.name;
+    if (!nameNode || nameNode.type !== "JSXIdentifier") return false;
+    const compName = nameNode.name;
+    const binding = path?.scope?.getBinding?.(compName);
+    if (!binding) return false;
+    const bpath: any = binding.path;
+    if (
+      !bpath ||
+      !(
+        bpath.isImportSpecifier?.() ||
+        bpath.isImportDefaultSpecifier?.() ||
+        bpath.isImportNamespaceSpecifier?.()
+      )
+    ) {
+      return false;
+    }
+    const importDecl: any = bpath.parent;
+    const source = importDecl?.source?.value || "";
+    if (typeof source !== "string") return false;
+    if (CHART_COMPONENT_MODULES.includes(source)) return true;
     return false;
   }
 
