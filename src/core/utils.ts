@@ -284,6 +284,23 @@ const getContentHash = (content: string) => {
   return Math.abs(hash).toString(16);
 };
 
+// 辅助函数：PascalCase -> kebab-case
+const toKebabCase = (str: string) =>
+  str.replace(
+    /[A-Z]/g,
+    (match, offset) => (offset > 0 ? "-" : "") + match.toLowerCase()
+  );
+
+const toPascalCase = (str) => {
+  // 如果没有连字符，说明不需要转换格式，直接返回原始字符串
+  if (!str.includes("-")) {
+    return str;
+  }
+
+  // 仅对带有连字符的 kebab-case 进行转换 (v-chart -> VChart)
+  return str.replace(/(^|-)(\w)/g, (_, __, letter) => letter.toUpperCase());
+};
+
 export {
   mergeOptions,
   detectFramework,
@@ -298,4 +315,6 @@ export {
   generateSourceMapComment,
   measureTime,
   getContentHash,
+  toKebabCase,
+  toPascalCase,
 };
